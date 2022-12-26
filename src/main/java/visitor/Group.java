@@ -34,4 +34,10 @@ public class Group<T> extends Task<T> {
             task.apply(arg);
         }
     }
+
+    @Override
+    public void stamp(Visitor<T> visitor) {
+        visitor.onSignature(this);
+        this.setHeader("groups", visitor.onSignature(this).get("groups"));
+    }
 }

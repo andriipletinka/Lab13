@@ -29,5 +29,5 @@ public abstract class Task<T> {
         return headers.get(header);
     }
 
-    public void stamp(Visitor visitor);
+    public abstract void stamp(Visitor<T> visitor);
 }
